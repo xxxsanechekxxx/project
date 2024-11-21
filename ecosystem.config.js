@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config({ path: "./.env.deploy"});
+dotenv.config({ path: "./.env.deploy" });
 const {
   DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPOSITORY = 'origin/master',
 } = process.env;
@@ -7,19 +7,21 @@ const {
 const fs = require('fs');
 const path = require('path');
 
-// Получаем имя первого `.js` файла в папке `dist`
-const distPath = path.join(__dirname, 'dist');
-const scriptFile = fs.readdirSync(distPath).find(file => file.endsWith('.js'));
-
+// Получаем имя первого `.js` файла в папке `build`
+const buildPath = path.join(__dirname, 'build');
+if (!fs.existsSync(buildPath)) {
+  throw new Error(`Directory "${buildPath}" does not exist.`);
+}
+const scriptFile = fs.readdirSync(buildPath).find(file => file.endsWith('.js'));
 if (!scriptFile) {
-  throw new Error('No JavaScript file found in the "dist" directory.');
+  throw new Error('No JavaScript file found in the "build" directory.');
 }
 
 module.exports = {
   apps: [
     {
       name: "victoriasecret",
-      script: path.join('dist', scriptFile), // Путь к найденному файлу
+      script: path.join('build', scriptFile), // Путь к найденному файлу
     },
   ],
   deploy: {
@@ -29,7 +31,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPOSITORY,
       path: DEPLOY_PATH,
-      'pre-deploy-local': `bash scripts/deployEnv.sh  ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
+      'pre-deploy-local': `bash scripts/deployEnv.sh ${DEPLOY_USER}@${DEPLOY_HOST} ${DEPLOY_PATH}`,
       'post-deploy': 'cd frontend && pwd && npm ci && npm run build:prod && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
