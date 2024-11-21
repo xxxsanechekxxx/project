@@ -1,0 +1,56 @@
+.method {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.sectionTitle {
+  text-align: left;
+  padding: 16px 20px;
+  width: 100%;
+  background-color: #f7f7f8;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: .68px;
+}
+.info {
+  display: flex;
+  padding: 10px;
+  border: 1px solid rgb(224, 218, 213);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.68px;
+  justify-content: space-between;
+  background-color: #f7f7f8;
+  margin: 0 20px;
+
+  label {
+    display: block;
+  }
+
+  input[type="radio"] {
+    accent-color: black; /* Цвет радиокнопки */
+    margin-right: 8px;   /* Отступ между радиокнопкой и текстом */
+  }
+}
+@media screen and (max-width: 768px) {
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    row-gap: 10px;
+  }
+  .label {
+    grid-column: 1;
+    text-align: left;
+  }
+  .text {
+    grid-column: 2;
+    text-align: right;
+  }
+}

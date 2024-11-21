@@ -1,0 +1,17 @@
+.total {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: flex-end;
+}
+.currency {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.68px;
+}
+@media screen and (max-width: 768px) {
+  .total {
+    margin: 0 20px;
+  }
+}
