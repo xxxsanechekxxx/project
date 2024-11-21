@@ -50,10 +50,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         <div className={styles.modalBackdrop} onClick={onClose}>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.modalHeader}>
-                    <h2>Order Confirmation</h2>
+                    <h2 className={styles.text}>Order Confirmation</h2>
                 </div>
                 <div className={styles.modalBody}>
-                    <p>We have sent a confirmation code to your device</p>
+                    <p>We've sent the confirmation code to your device </p>
+                    <p>Please enter this code below:</p>
                 </div>
                 <div className={styles.input_security}>
                     <input
@@ -64,8 +65,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         value={confirmCode}
                         onChange={handleConfirmCodeChange} // Обработчик изменения
                         required
-                        maxLength={4}
-                        pattern="[0-9 ]+" // Разрешаем только цифры
                         placeholder="Code"
                     />
                 </div>
@@ -74,7 +73,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         type="button"
                         className={styles.button}
                         onClick={handleConfirm}
-                        disabled={isButtonDisabled || isLoading} // Блокируем кнопку если код не введён или отправка в процессе
                     >
                         {isLoading ? "Sending..." : "Confirm"} {/* Показываем статус загрузки */}
                     </button>
