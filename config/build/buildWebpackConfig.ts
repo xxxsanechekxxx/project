@@ -13,9 +13,8 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         mode,
         entry: paths.entry,
         output: {
-            filename: "[name].js",
+            filename: "[name].[contenthash].js",
             path: paths.build,
-            publicPath: '/',
             clean: true,
         },
         plugins: buildPlugins(options),
