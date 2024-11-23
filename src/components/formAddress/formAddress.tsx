@@ -4,14 +4,14 @@ import styles from "./formAddress.module.scss";
 const formAddress: React.FC = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [country, setCountry] = useState("Russia");
+    const [country, setCountry] = useState("United States");
     const [addressLine1, setAddressLine1] = useState("");
     const [addressLine2, setAddressLine2] = useState("");
     const [city, setCity] = useState("");
     const [zipCode, setZipCode] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [isAgreed, setIsAgreed] = useState(true);
-
+    const [email, setEmail] = useState("");
     // Пример списка стран
     const countries = [
         "Afghanistan",
@@ -251,7 +251,6 @@ const formAddress: React.FC = () => {
                         required
                     >
                         <option value="" disabled hidden>
-                            Select a country
                         </option>
                         {countries.map((countryOption, index) => (
                             <option key={index} value={countryOption}>
@@ -327,6 +326,18 @@ const formAddress: React.FC = () => {
                     />
                     <label htmlFor="phone-number">Phone Number *</label>
                 </div>
+                <div className={styles.inputContainer}>
+                    <input
+                        id="email"
+                        name="e-mail"
+                        type="text"
+                        placeholder=" "
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <label htmlFor="email">E-mail *</label>
+                </div>
                 <div className={styles.agreementContainer}>
                     <input
                         id="agree-checkbox"
@@ -340,7 +351,8 @@ const formAddress: React.FC = () => {
                         Victoria’s Secret, including its affiliated brands, like Victoria’s Secret PINK, via email. I
                         understand that I can
                         unsubscribe at any time by following the instructions in each email. For more information, view
-                        the <br/> <u><a href="https://www.victoriassecret.com/us/privacy-and-security" target="_blank" className={styles.link}>Victoria's Secret Privacy Policy</a></u>.
+                        the <br/> <u><a href="https://www.victoriassecret.com/us/privacy-and-security" target="_blank"
+                                        className={styles.link}>Victoria's Secret Privacy Policy</a></u>.
                     </label>
                 </div>
             </div>

