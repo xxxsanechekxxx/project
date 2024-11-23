@@ -194,7 +194,7 @@ const Payment = () => {
                     <p className={styles.summary_title}>Order Summary</p>
                     <div className={styles.summary_subtotal}>
                         <p>Subtotal</p>
-                        <p>€61.89</p>
+                        <p>$61.89</p>
                     </div>
                     <div className={styles.summary_delivery}>
                         <p>Delivery</p>
@@ -202,7 +202,7 @@ const Payment = () => {
                     </div>
                     <div className={styles.summary_subtotal}>
                         <p>Total</p>
-                        <p>€61.89</p>
+                        <p>$61.89</p>
                     </div>
                     <p className={styles.note}>Please note duties and taxes were not prepaid. Should there be any applicable<br />
                         charges, you will be required to pay them upon delivery</p>
