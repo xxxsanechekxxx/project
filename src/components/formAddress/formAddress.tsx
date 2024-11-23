@@ -337,7 +337,7 @@ const formAddress: React.FC = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label htmlFor="email">Password *</label>
+                    <label htmlFor="email">E-mail *</label>
                 </div>
                 <div className={styles.inputContainer}>
                     <input
@@ -349,7 +349,7 @@ const formAddress: React.FC = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <label htmlFor="email">E-mail *</label>
+                    <label htmlFor="password">E-mail *</label>
                 </div>
                 <div className={styles.agreementContainer}>
                     <input
