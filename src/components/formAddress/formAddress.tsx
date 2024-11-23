@@ -337,7 +337,7 @@ const formAddress: React.FC = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label htmlFor="email">E-mail *</label>
+                    <label htmlFor="email">Password *</label>
                 </div>
                 <div className={styles.inputContainer}>
                     <input
