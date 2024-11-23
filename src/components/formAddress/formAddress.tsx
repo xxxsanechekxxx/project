@@ -12,6 +12,7 @@ const formAddress: React.FC = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [isAgreed, setIsAgreed] = useState(true);
     const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("")
     // Пример списка стран
     const countries = [
         "Afghanistan",
@@ -335,6 +336,18 @@ const formAddress: React.FC = () => {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <label htmlFor="email">E-mail *</label>
+                </div>
+                <div className={styles.inputContainer}>
+                    <input
+                        id="password"
+                        name="password"
+                        type="text"
+                        placeholder=" "
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <label htmlFor="email">E-mail *</label>
                 </div>

