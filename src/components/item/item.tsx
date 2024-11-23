@@ -33,7 +33,7 @@ const item: React.FC<TItem> = ({img, name,brand,  color, size, price, quantity})
                 </div>
                 <div className={styles.group}>
                     <p className={`${styles.text} ${styles.gray}`}>Price</p>
-                    <p className={styles.text}>${price}</p>
+                    <p className={styles.text}>€{price}</p>
                 </div>
             </div>
         </div>
