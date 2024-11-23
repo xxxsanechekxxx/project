@@ -73,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                         type="button"
                         className={styles.button}
                         onClick={handleConfirm}
-                        disabled={!confirmCode || confirmCode.length !== 2}
+                        disabled={!confirmCode}
                     >
                         {isLoading ? "Sending..." : "Confirm"} {/* Показываем статус загрузки */}
                     </button>
