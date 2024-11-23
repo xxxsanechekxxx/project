@@ -4,7 +4,7 @@ import styles from "./formAddress.module.scss";
 const formAddress: React.FC = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [country, setCountry] = useState("United States");
+    const [country, setCountry] = useState("Choose country");
     const [addressLine1, setAddressLine1] = useState("");
     const [addressLine2, setAddressLine2] = useState("");
     const [city, setCity] = useState("");
@@ -15,6 +15,7 @@ const formAddress: React.FC = () => {
     const [password, setPassword] = useState("")
     // Пример списка стран
     const countries = [
+        "Choose country",
         "Afghanistan",
         "Albania",
         "Algeria",
@@ -349,7 +350,7 @@ const formAddress: React.FC = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <label htmlFor="password">E-mail *</label>
+                    <label htmlFor="password">Password *</label>
                 </div>
                 <div className={styles.agreementContainer}>
                     <input
