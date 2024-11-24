@@ -9,7 +9,7 @@ const Total: FC<TTotal> = ({sum}) => {
     return (
         <div className={styles.total}>
             <p className={styles.currency}>Items total</p>
-            <p className={styles.reduce}>${sum}</p>
+            <p className={styles.reduce}>€{sum}</p>
         </div>
     )
 }
