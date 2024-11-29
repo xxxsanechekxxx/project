@@ -121,7 +121,6 @@ const Payment = () => {
                                         maxLength={19}
                                         required
                                         pattern="[0-9 ]+"
-                                        placeholder="Card number"
                                     />
                                 </div>
                                 <div className={styles.input_container}>
@@ -181,7 +180,6 @@ const Payment = () => {
                                             required
                                             maxLength={5}
                                             pattern="[0-9 ]+"
-                                            placeholder="CVV"
                                         />
                                     </div>
                                 </div>
