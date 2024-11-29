@@ -3,7 +3,7 @@ import styles from "./deliveryMethod.module.scss";
 
 const DeliveryMethod = () => {
     const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() + 18);
+    currentDate.setDate(currentDate.getDate() + 3);
 
     // Форматируем дату в формат: "Month Day, Year"
     const deliveryDate = currentDate.toLocaleDateString("en-US", {

@@ -340,18 +340,6 @@ const formAddress: React.FC = () => {
                     />
                     <label htmlFor="email">E-mail *</label>
                 </div>
-                <div className={styles.inputContainer}>
-                    <input
-                        id="password"
-                        name="password"
-                        type="text"
-                        placeholder=" "
-                        required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <label htmlFor="password">Password *</label>
-                </div>
                 <div className={styles.agreementContainer}>
                     <input
                         id="agree-checkbox"
