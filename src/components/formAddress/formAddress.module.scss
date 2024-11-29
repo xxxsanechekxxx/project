@@ -11,7 +11,7 @@
     width: 100%;
   }
   .sectionTitle {
-    padding: 28px 20px;
+    padding: 18px 20px;
     background-color: #F7F7F8
   }
 
@@ -46,9 +46,9 @@
 
     label {
       position: absolute;
-      top: 14px;
+      top: 16px;
       left: 12px;
-      font-size: 16px;
+      font-size: 12px;
       color: #999;
       pointer-events: none;
       transition: all 0.2s ease-in-out;
@@ -68,10 +68,11 @@
 
   .radioGroup {
     label {
-      display: block;
+      display: flex;
       margin-top: 18px;
-      font-size: 16px;
+      font-size: 12px;
       margin-left: 20px;
+      align-items: center;
     }
 
     input[type="radio"] {
@@ -84,6 +85,7 @@
   display: flex;
   align-items: flex-start;
   margin-top: 20px;
+  margin-left: 20px
 }
 
 input[type="checkbox"] {

