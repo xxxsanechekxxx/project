@@ -378,7 +378,6 @@ const formAddress: React.FC = () => {
                             type="radio"
                             name="deliveryAddress"
                             value="alternative"
-                            disabled
                             />
                             Add an alternative delivery address
                         </label>
